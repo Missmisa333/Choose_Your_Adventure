@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Theme Made By www.w3schools.com - No Copyright -->
+  <!--https://www.w3schools.com/bootstrap/bootstrap_theme_me.asp-->
+
+  <title>Classic Mode R3</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <link href="/static/style.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" >
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>                        
+        </button>
+        <a class="navbar-brand" href="#">Misa</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="/">Home</a></li>
+          <li><a href="#">Survial Mode</a></li>
+          <li><a href="#">Dungeoun Mode</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+
+<!-- Main Text Area-->
+<div class="container-fluid bg-2 text-center">
+    <h1 class="margin">Classic Mode</h1>
+    <p class="margin" >{{intro}} </p>
+
+
+
+
+  <form method ="post" action= '/end_screen/'>
+      <button class = "btn btn-default btn-lg btn-block" name="submit_a" value="submit_a" type="submit"> {{a_text}}</button>
+      <button class = "btn btn-default btn-lg btn-block" name="submit_b"value="submit_b" type="submit">{{b_text}}</button>
+      <button class = "btn btn-default btn-lg btn-block" name="submit_c" value="submit_c" type="submit">{{c_text}}</button>
+  </form>
+
+
+  
+  </div>
+
+
+<!-- Footer -->
+<footer class="container-fluid bg-4 text-center">
+  <p>Created by Misa Hamanaka</a></p> 
+</footer>
