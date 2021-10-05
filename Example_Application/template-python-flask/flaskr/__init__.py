@@ -36,6 +36,13 @@ def create_app(test_config=None):
     @app.route('/')
     def index():
         session['score'] = 0
+        #For Classic Mode
+        #First Question
+        session['intro_text'] = "You fell asleep in the library and you suddenly find yourself late to Miss Misa's class! What are you going to do!?"
+        session['choice_a_text'] = 'Start running to class'
+        session['choice_b_text'] = 'Keep sleeping'
+        session['choice_c_text'] = 'Roam the hallway'
+        session['go_to_this_html_page'] = 'classic_mode.html'
 
         return render_template('index.html')
 
@@ -74,16 +81,8 @@ def create_app(test_config=None):
 
 
     @app.route("/classic_mode",methods=['GET', 'POST'])
-    def original():
-        #First Question
-        session['intro_text'] = "You fell asleep in the library and you suddenly find yourself late to Miss Misa's class! What are you going to do!?"
-        session['choice_a_text'] = 'Start running to class'
-        session['choice_b_text'] = 'Keep sleeping'
-        session['choice_c_text'] = 'Roam the hallway'
-        session['go_to_this_html_page'] = 'classic_mode.html'
+    def classic_mode1():
         print("Message: Q1")
-        
-        
         #Change the score depending on whether you clicked a, b, or c using the button_clicking function
         #Change the text when clicked using the button_clicking function
         #Second Question
@@ -175,20 +174,14 @@ def create_app(test_config=None):
 
         return last_scene
 
+    @app.route("/trial/", methods=['POST', 'GET'])
+    def trial():  
+        
+        return render_template('trial.html',  intro = session['intro_text'], a_text = session['choice_a_text'], b_text = session['choice_b_text'], c_text = session['choice_c_text'])
+
 
     
 
-
-    # register the database commands
-    from flaskr import db
-
-    db.init_app(app)
-
-    # apply the blueprints to the app
-    from flaskr import auth, blog
-
-    app.register_blueprint(auth.bp)
-    app.register_blueprint(blog.bp)
 
     # make url_for('index') == url_for('blog.index')
     # in another app, you might define a separate main index here with

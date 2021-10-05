@@ -1,4 +1,0 @@
-Flask
-
-[test]
-pytest

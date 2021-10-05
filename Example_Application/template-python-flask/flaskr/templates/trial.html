@@ -1,0 +1,14 @@
+
+{% extends "base.html" %}
+{% block content %}
+<p class="margin" >{{intro}} </p>
+<form method ="post" action= ''>
+
+<button class = "btn btn-default btn-lg btn-block" name="submit_a" value="submit_a" type="submit"> {{a_text}}
+</button>
+<button class = "btn btn-default btn-lg btn-block" name="submit_b"value="submit_b" type="submit">{{b_text}}</button>
+<button class = "btn btn-default btn-lg btn-block" name="submit_c" value="submit_c" type="submit">{{c_text}}
+</button>
+</form>
+
+{% endblock %}
